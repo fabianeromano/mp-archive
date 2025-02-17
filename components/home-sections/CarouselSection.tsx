@@ -91,7 +91,7 @@ const CarouselSection: React.FC<CarouselSectionProps> = ({
           ))}
         </CarouselContent>
         <CarouselPrevious />
-        <CarouselNext />
+        <CarouselNext className="hidden md:flex" />
       </Carousel>
     </section>
   );
