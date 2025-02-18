@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
 import {
   Carousel,
   CarouselContent,
@@ -10,12 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 
 interface CarouselSectionProps {
@@ -54,39 +51,33 @@ const CarouselSection: React.FC<CarouselSectionProps> = ({
       </div>
       <Carousel className="w-full max-w-xs">
         <CarouselContent className="-ml-1">
-          {items.map((card) => (
-            <CarouselItem key={card.id} className="">
-              <div className="p-1 flex justify-center items-center">
-                <Card className="shadow-lg w-60 cursor-pointer">
-                  <CardHeader className="p-2">
-                    <div className="rounded-lg bg-gray-100 overflow-hidden aspect-square">
-                      <Image
-                        src={card.imageUrl || "/placeholder.svg"}
-                        alt={card.title}
-                        width={164}
-                        height={194}
-                        className="object-contain w-auto h-full mx-auto"
-                      />
-                    </div>
-                  </CardHeader>
-                  <CardContent className="py-1">
-                    <h3 className="text-base font-semibold leading-4 text-center text-[#000000] mb-1">
-                      {card.title}
-                    </h3>
-                    <p className="font-normal text-xs text-[#9ea4b0] text-center">
-                      {card.author}
-                    </p>
-                  </CardContent>
-                  <CardFooter className="flex flex-col justify-center items-center pb-1">
-                    <h4 className="text-xs font-medium text-[#000000]">
-                      {card.category}
-                    </h4>
-                    <p className="text-xs font-normal text-[#9ea4b0]">
-                      {card.year}
-                    </p>
-                  </CardFooter>
-                </Card>
-              </div>
+          {items.map((book) => (
+            <CarouselItem key={book.id} className="">
+              <Card className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer">
+                <CardHeader className="aspect-[4/3] relative">
+                  <Image
+                    src={book.imageUrl || "/placeholder.svg"}
+                    alt={book.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <h2 className="absolute bottom-4 left-4 right-4 text-white font-bold text-xl line-clamp-2 drop-shadow-lg">
+                    {book.title}
+                  </h2>
+                </CardHeader>
+                <CardContent className="p-4">
+                  <p className="text-gray-600 mb-1">{book.author}</p>
+                  <p className="text-gray-500 text-sm mb-2">{book.year}</p>
+                  {/* <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                    {book.category}
+                  </span> */}
+                  <Badge className="bg-[#027eff] text-white">
+                    {book.category}
+                  </Badge>
+                </CardContent>
+              </Card>
             </CarouselItem>
           ))}
         </CarouselContent>

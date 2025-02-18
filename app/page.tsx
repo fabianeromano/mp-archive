@@ -1,6 +1,7 @@
 // import Image from "next/image";
 
 import CarouselSection from "@/components/home-sections/CarouselSection";
+import Hero from "@/components/home-sections/Hero";
 
 const prayerdata = [
   {
@@ -64,7 +65,8 @@ const magazinedata = [
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full pb-10">
+      <Hero />
       <CarouselSection titleSection="Oraciones" items={prayerdata} />
       <CarouselSection titleSection="Revistas" items={magazinedata} />
       {/* <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
