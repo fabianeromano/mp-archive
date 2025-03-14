@@ -1,7 +1,14 @@
 "use client";
 
-import { FilterItem } from "@/app/category/page";
 import { Badge } from "@/components/ui/badge";
+
+// Definimos el tipo FilterItem aquí para evitar dependencias circulares
+interface FilterItem {
+  id: number;
+  icon: React.ReactNode;
+  label: string;
+  type: string | null;
+}
 
 type FilterBadgesProps = {
   filterItems: FilterItem[];

@@ -93,11 +93,26 @@ export default function Page({ params }: PageProps) {
           <p className="text-sm dark:text-gray-200">{document.description}</p>
         </div>
         <div className="w-full flex justify-center items-center">
-          <Link
+          {document.type === "revistas" ? (
+            <a
+              href={document.documentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-1/3 md:w-1/3">
+              <Button className="w-full">Ver Revista</Button>
+            </a>
+          ) : (
+            <Link
+              href={`/document/${document.id}/view`}
+              className="w-1/3 md:w-1/3">
+              <Button className="w-full">Ver Archivo</Button>
+            </Link>
+          )}
+          {/* <Link
             href={`/document/${document.id}/view`}
             className="w-1/3 md:w-1/3">
             <Button className="w-full">Ver Archivo</Button>
-          </Link>
+          </Link> */}
         </div>
       </article>
     </section>
