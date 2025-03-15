@@ -8,15 +8,15 @@ export default function FeaturedSection() {
   const { latestPrayer, latestMagazine } = useDocuments();
 
   return (
-    <section className="w-full grid grid-cols-1 lg:grid-cols-2 p-3 gap-3">
+    <section className="w-full grid grid-cols-1 md:grid-cols-2 p-3 gap-3">
       <Link href={`/document/${latestMagazine?.id}`}>
-        <article className="rounded-xl relative w-full overflow-hidden h-[50vh]">
+        <article className="rounded-xl relative w-full overflow-hidden h-[30vh] md:h-[50vh]">
           <div className="absolute top-0 left-0 w-1/2 z-10 h-full pt-4 pl-4 pb-8 flex flex-col justify-between items-start">
             <div>
               <p className="text-sm font-normal text-white dark:text-black line-clamp-1">
                 Revista
               </p>
-              <h1 className="text-3xl font-black text-gray-200 dark:text-black">
+              <h1 className="text-xl lg:text-3xl font-black text-gray-200 dark:text-black">
                 {latestMagazine?.title}
               </h1>
             </div>
@@ -46,13 +46,13 @@ export default function FeaturedSection() {
         </article>
       </Link>
       <Link href={`/document/${latestPrayer?.id}`}>
-        <article className="rounded-xl relative w-full overflow-hidden h-[50vh]">
+        <article className="rounded-xl relative w-full overflow-hidden h-[30vh] md:h-[50vh]">
           <div className="absolute top-0 left-0 w-1/2 z-10 h-full pt-4 pl-4 pb-8 flex flex-col justify-between items-start">
             <div>
               <p className="text-sm font-normal text-white dark:text-black line-clamp-1">
                 Revista
               </p>
-              <h1 className="text-3xl font-black text-gray-200 dark:text-black">
+              <h1 className="text-xl lg:text-3xl font-black text-gray-200 dark:text-black">
                 {latestPrayer?.title}
               </h1>
             </div>
