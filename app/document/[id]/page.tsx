@@ -35,8 +35,8 @@ export default function Page({ params }: PageProps) {
   }
 
   return (
-    <section className="w-full h-full grid grid-cols-1 lg:grid-cols-2 p-4 gap-4">
-      <article className="w-full flex justify-center items-start bg-muted/50 p-2 rounded-xl">
+    <section className="w-full h-fit grid grid-cols-1 lg:grid-cols-2 p-4 gap-4">
+      <article className="w-full flex justify-center items-start bg-black/10 p-2 rounded-xl">
         <Dialog>
           <DialogTrigger className="w-full">
             <div>
@@ -69,7 +69,7 @@ export default function Page({ params }: PageProps) {
           </DialogContent>
         </Dialog>
       </article>
-      <article className="p-2 rounded-xl bg-muted/50">
+      <article className="p-2 rounded-xl bg-black/10">
         <div className="w-full px-3 text-center">
           <h3 className="font-bold text-lg lg:text-left">{document.title}</h3>
           <p className="text-sm dark:text-gray-200 line-clamp-1 lg:text-left">
@@ -108,11 +108,6 @@ export default function Page({ params }: PageProps) {
               <Button className="w-full">Ver Archivo</Button>
             </Link>
           )}
-          {/* <Link
-            href={`/document/${document.id}/view`}
-            className="w-1/3 md:w-1/3">
-            <Button className="w-full">Ver Archivo</Button>
-          </Link> */}
         </div>
       </article>
     </section>
