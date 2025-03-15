@@ -53,12 +53,12 @@ export default function Page({ params }: PageProps) {
               </p>
             </div>
           </DialogTrigger>
-          <DialogContent className="w-full h-screen">
+          <DialogContent className="w-full h-[90vh]">
             <DialogHeader>
               <DialogTitle>{document.title}</DialogTitle>
               <DialogDescription className="bg-muted/50 flex justify-center items-center">
                 <Image
-                  className="w-full h-[90vh] object-contain"
+                  className="w-full h-full object-contain"
                   src={document.imageUrl}
                   alt={document.title}
                   width={300}
